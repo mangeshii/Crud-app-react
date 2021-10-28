@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Style.css";
 
 const UserTable = (props) => {
-    const { users, removeUser } = props;
+    const { users, removeUser, editRow } = props;
     return (
         <>
             <h2>View User</h2>
@@ -27,6 +27,7 @@ const UserTable = (props) => {
                                         <button
                                             type="button"
                                             class="btn btn-warning"
+                                            onClick={() => editRow(user)}
                                         >
                                             EDIT
                                         </button>
