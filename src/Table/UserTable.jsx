@@ -3,6 +3,7 @@ import "../Style/Style.css";
 
 const UserTable = (props) => {
     const { users, removeUser, editRow } = props;
+
     return (
         <>
             <h2 className="view">View User</h2>

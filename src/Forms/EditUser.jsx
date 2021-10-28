@@ -6,6 +6,7 @@ const EditUser = (props) => {
     const { setEditing, currentUser, updateUser } = props;
     const [user, setUser] = useState(currentUser);
 
+
     const handleSubmit = (event) => {
         event.preventDefault();
         updateUser(user.id, user);
