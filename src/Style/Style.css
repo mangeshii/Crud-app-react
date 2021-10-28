@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+    justify-content: space-between;
+}
+/* .flex-large{
+    border:2px solid red
+}
+
+thead th{
+    border:2px solid blue
+} */

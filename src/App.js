@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import UserTable from "./Table/UserTable";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../src/Style/Style.css"
+import AddUser from "./Forms/AddUser";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="container">
+            <h1> CRUD Application</h1>
+            <div className="flex-row">
+                <div className="flex-large col-md-5">
+                    <AddUser/>
+                </div>
+                <div className="flex-large col-md-7">
+                    <UserTable/>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
