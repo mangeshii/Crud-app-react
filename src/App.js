@@ -2,8 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../src/Style/Style.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Components/Home";
-import AddUser from "./Components/AddUser";
-import EditUser from "./Components/EditUser";
+import AddBook from "./Components/AddBook";
+import EditBook from "./Components/EditBook";
 function App() {
     return (
 
@@ -11,8 +11,8 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/add" component={AddUser} />
-                    <Route exact path="/edit/:id" component={EditUser} />
+                    <Route exact path="/add" component={AddBook} />
+                    <Route exact path="/edit/:id" component={EditBook} />
                 </Switch>
             </Router>
         </div>

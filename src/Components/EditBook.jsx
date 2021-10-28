@@ -1,7 +1,7 @@
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const EditUser=()=>{
+const EditBook=()=>{
     return(
         <Form>
         <FormGroup />
@@ -18,4 +18,4 @@ const EditUser=()=>{
     </Form>
     )
 }
-export default EditUser
+export default EditBook

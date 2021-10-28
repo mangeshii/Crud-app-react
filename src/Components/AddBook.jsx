@@ -1,7 +1,7 @@
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const AddUser = () => {
+const AddBook = () => {
     return (
         <>
             <Form>
@@ -20,4 +20,4 @@ const AddUser = () => {
         </>
     );
 };
-export default AddUser;
+export default AddBook;
