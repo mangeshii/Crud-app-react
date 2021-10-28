@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Style.css";
 
-const UserTable = () => {
+const UserTable = (props) => {
+    const { users, removeUser } = props;
     return (
         <>
             <h2>View User</h2>
@@ -9,23 +10,42 @@ const UserTable = () => {
                 <thead>
                     <tr>
                         <th className="col-md-5">Name</th>
-                        <th className="col-md-5">Username</th>
-                        <th className="col-md-2">Actions</th>
+                        <th className="col-md-4">Username</th>
+                        <th className="col-md-3">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td className="col-md-5">Name data</td>
-                        <td className="col-md-5">Username data</td>
-                        <td className="col-md-2">
-                            <button className="button muted-button">
-                                Edit
-                            </button>
-                            <button className="button muted-button">
-                                Delete
-                            </button>
-                        </td>
-                    </tr>
+                    {users.length > 0 ? (
+                        users.map((user, index) => {
+                            return (
+                                <tr keys={index}>
+                                    <td className="col-md-5">{user.name}</td>
+                                    <td className="col-md-4">
+                                        {user.username}
+                                    </td>
+                                    <td className="col-md-3">
+                                        <button
+                                            type="button"
+                                            class="btn btn-warning"
+                                        >
+                                            EDIT
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn btn-danger"
+                                            onClick={() => removeUser(user.id)}
+                                        >
+                                            DELETE
+                                        </button>
+                                    </td>
+                                </tr>
+                            );
+                        })
+                    ) : (
+                        <tr>
+                            <td className="col-md-5">No users</td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
         </>
