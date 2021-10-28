@@ -1,10 +1,14 @@
+import Heading from "./Heading"
+import BookList from "./BookList"
+
 const Home=()=>{
     return(
         <>
-        <div >
-            <h1>home</h1>
-        </div>
+
+            <Heading/>
+            <BookList/>
         </>
+
     )
 }
 export default Home

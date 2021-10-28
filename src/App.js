@@ -7,7 +7,7 @@ import EditBook from "./Components/EditBook";
 function App() {
     return (
 
-        <div style={{maxWidth:'40rem',margin:'4rem auto'}}>
+        <div style={{maxWidth:'70rem',margin:'4rem auto'}}>
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />
