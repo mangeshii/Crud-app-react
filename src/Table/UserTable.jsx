@@ -5,13 +5,13 @@ const UserTable = (props) => {
     const { users, removeUser, editRow } = props;
     return (
         <>
-            <h2>View User</h2>
+            <h2 className="view">View User</h2>
             <table className="container-fluid">
                 <thead>
                     <tr>
-                        <th className="col-md-5">Name</th>
+                        <th className="col-md-4">Name</th>
                         <th className="col-md-4">Username</th>
-                        <th className="col-md-3">Actions</th>
+                        <th className="col-md-4">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,21 +19,21 @@ const UserTable = (props) => {
                         users.map((user, index) => {
                             return (
                                 <tr keys={index}>
-                                    <td className="col-md-5">{user.name}</td>
+                                    <td className="col-md-4">{user.name}</td>
                                     <td className="col-md-4">
                                         {user.username}
                                     </td>
-                                    <td className="col-md-3">
+                                    <td className="col-md-4 btn-act">
                                         <button
                                             type="button"
-                                            class="btn btn-warning"
+                                            className="btn-edit btn-sm btn-warning"
                                             onClick={() => editRow(user)}
                                         >
                                             EDIT
                                         </button>
                                         <button
                                             type="button"
-                                            class="btn btn-danger"
+                                            className="btn btn-sm btn-danger"
                                             onClick={() => removeUser(user.id)}
                                         >
                                             DELETE

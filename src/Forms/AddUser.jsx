@@ -21,11 +21,11 @@ const AddUser = (props) => {
     };
     return (
         <>
-            <h2>Add User</h2>
+            <h2 className='add'>Add User</h2>
             <form onSubmit={handleSubmit}>
                 <label>Name</label>
                 <input
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     type="text"
                     aria-label=".form-control-lg example"
                     onChange={handleChange}
@@ -34,14 +34,14 @@ const AddUser = (props) => {
                 ></input>
                 <label>Username</label>
                 <input
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     type="text"
                     aria-label=".form-control-lg example"
                     onChange={handleChange}
                     name="username"
                     value={newUser.username}
                 ></input>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="add-btn btn-primary">
                     ADD
                 </button>
             </form>
