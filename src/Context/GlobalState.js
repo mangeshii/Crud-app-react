@@ -3,7 +3,7 @@ import AppReducer from "./AppReducer";
 
 //initial state
 const initialState = {
-    users: [
+    books: [
         {
             id: 1,
             title: "book1",
@@ -25,22 +25,29 @@ const initialState = {
     ],
 };
 
-
 // create context
-export const GlobalContext=createContext(initialState)
+export const GlobalContext = createContext(initialState);
 // console.log(GlobalContext)
 
 // provider component
-export const GlobalProvider =({children})=>{
+export const GlobalProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    const [state,dispatch]=useReducer(AppReducer,initialState);
+    const removeBook=(id)=>{
+        dispatch({
+            type:'REMOVE_BOOK',
+            payload:id
+        })
+    }
 
-
-    return(
-        <GlobalContext.Provider value={{
-            users:state.users
-        }}>
+    return (
+        <GlobalContext.Provider
+            value={{
+                books: state.books,
+                removeBook
+            }}
+        >
             {children}
         </GlobalContext.Provider>
-    )
-}
+    );
+};

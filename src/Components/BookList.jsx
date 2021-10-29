@@ -5,8 +5,8 @@ import { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const BookList = () => {
-    const { users } = useContext(GlobalContext);
-    console.log(users);
+    const { books, removeBook } = useContext(GlobalContext);
+
     return (
         <>
             <ListGroup>
@@ -17,22 +17,20 @@ const BookList = () => {
                     <div className="col-md-3">Actions</div>
                 </ListGroupItem>
 
-                {users.map((user) => {
+                {books.map((book) => {
                     return (
-                        <ListGroupItem style={{ display: "flex" }}>
-                            <div className="col-md-3">
-                                {user.title}
-                            </div>
-                            <div className="col-md-3">{user.author}</div>
-                            <div className="col-md-3">{user.genre}</div>
+                        <ListGroupItem key={book.id} style={{ display: "flex" }}>
+                            <div className="col-md-3">{book.title}</div>
+                            <div className="col-md-3">{book.author}</div>
+                            <div className="col-md-3">{book.genre}</div>
                             <div className="col-md-3">
                                 <Link
                                     className="btn btn-warning"
-                                    to={`/edit/${user.id}`}
+                                    to={`/edit/${book.id}`}
                                 >
                                     Edit
                                 </Link>
-                                <Button className="btn btn-danger">
+                                <Button onClick={()=>removeBook(book.id)} className="btn btn-danger">
                                     Delete
                                 </Button>
                             </div>
