@@ -1,45 +1,47 @@
-import {Link} from 'react-router-dom';
-import { ListGroup,ListGroupItem,Button } from 'reactstrap';
+import { Link } from "react-router-dom";
+import { ListGroup, ListGroupItem, Button } from "reactstrap";
+import { GlobalContext } from "../Context/GlobalState";
+import { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-const BookList=()=>{
-    return(
+const BookList = () => {
+    const { users } = useContext(GlobalContext);
+    console.log(users);
+    return (
         <>
-        <ListGroup>
-            <ListGroupItem style={{display:'flex', fontWeight:'bold'}}>
-                <div className="col-md-3 ">
-                    Title
-                </div>
-                <div className="col-md-3">
-                    Author
-                </div>
-                <div className="col-md-3">
-                    Genre
-                </div>
-                <div className="col-md-3">
-                    Actions
-                </div>
-            </ListGroupItem>
-            <ListGroupItem style={{display:'flex'}}>
-                <div className="col-md-3">
-                    The Monk Who Sold His Ferrari
-                </div>
-                <div className="col-md-3">
-                        Robin Sharma
-                </div>
-                <div className="col-md-3">
-                    Fiction
-                </div>
-                <div className="col-md-3">
-                    <Link className="btn btn-warning" to='/edit/:id'>Edit</Link>
-                    <Button className="btn btn-danger">Delete</Button>
-                </div>
-            </ListGroupItem>
+            <ListGroup>
+                <ListGroupItem style={{ display: "flex", fontWeight: "bold" }}>
+                    <div className="col-md-3 ">Title</div>
+                    <div className="col-md-3">Author</div>
+                    <div className="col-md-3">Genre</div>
+                    <div className="col-md-3">Actions</div>
+                </ListGroupItem>
 
-        </ListGroup>
+                {users.map((user) => {
+                    return (
+                        <ListGroupItem style={{ display: "flex" }}>
+                            <div className="col-md-3">
+                                {user.title}
+                            </div>
+                            <div className="col-md-3">{user.author}</div>
+                            <div className="col-md-3">{user.genre}</div>
+                            <div className="col-md-3">
+                                <Link
+                                    className="btn btn-warning"
+                                    to={`/edit/${user.id}`}
+                                >
+                                    Edit
+                                </Link>
+                                <Button className="btn btn-danger">
+                                    Delete
+                                </Button>
+                            </div>
+                        </ListGroupItem>
+                    );
+                })}
+            </ListGroup>
         </>
-    )
-    }
+    );
+};
 
-export default BookList
+export default BookList;
