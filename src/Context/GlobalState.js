@@ -7,21 +7,21 @@ const initialState = {
     books: [
         {
             id: uuid(),
-            title: "book1",
-            author: "mangeshi",
-            genre: "patil",
+            title: "The Monk Who Sold His Ferrari",
+            author: "Robin Sharma",
+            genre: "Fiction",
         },
         {
             id: uuid(),
-            title: "book2",
-            author: "mayur",
-            genre: "patil",
+            title: "The Theory Of Everything",
+            author: "Stephen W Hawking",
+            genre: "Engineering and Technology",
         },
         {
             id: uuid(),
-            title: "book3",
-            author: "vivek",
-            genre: "patil",
+            title: "Rich Dad Poor Dad",
+            author: "Robert T Kiyosaki",
+            genre: "Personal Finanace",
         },
     ],
 };

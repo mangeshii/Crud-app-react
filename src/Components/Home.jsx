@@ -1,14 +1,12 @@
-import Heading from "./Heading"
-import BookList from "./BookList"
+import Heading from "./Heading";
+import BookList from "./BookList";
 
-const Home=()=>{
-    return(
+const Home = () => {
+    return (
         <>
-
-            <Heading/>
-            <BookList/>
+            <Heading />
+            <BookList />
         </>
-
-    )
-}
-export default Home
+    );
+};
+export default Home;
