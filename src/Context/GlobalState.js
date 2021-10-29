@@ -1,23 +1,24 @@
 import React, { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
+import { v4 as uuid } from "uuid";
 
 //initial state
 const initialState = {
     books: [
         {
-            id: 1,
+            id: uuid(),
             title: "book1",
             author: "mangeshi",
             genre: "patil",
         },
         {
-            id: 2,
+            id: uuid(),
             title: "book2",
             author: "mayur",
             genre: "patil",
         },
         {
-            id: 3,
+            id: uuid(),
             title: "book3",
             author: "vivek",
             genre: "patil",
@@ -27,24 +28,40 @@ const initialState = {
 
 // create context
 export const GlobalContext = createContext(initialState);
-// console.log(GlobalContext)
 
 // provider component
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    const removeBook=(id)=>{
+    // Actions
+    const removeBook = (id) => {
         dispatch({
-            type:'REMOVE_BOOK',
-            payload:id
-        })
-    }
+            type: "REMOVE_BOOK",
+            payload: id,
+        });
+    };
+
+    const AddBook = (books) => {
+        dispatch({
+            type: "ADD_BOOK",
+            payload: books,
+        });
+    };
+
+    const editBook = (books) => {
+        dispatch({
+            type: "EDIT_BOOK",
+            payload: books,
+        });
+    };
 
     return (
         <GlobalContext.Provider
             value={{
                 books: state.books,
-                removeBook
+                removeBook,
+                AddBook,
+                editBook,
             }}
         >
             {children}
