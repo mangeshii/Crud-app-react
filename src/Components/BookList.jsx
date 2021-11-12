@@ -29,14 +29,13 @@ const BookList = () => {
                                 <div className="col-md-3">{book.genre}</div>
                                 <div className="col-md-3">
                                     <Link
-
                                         className="btn btn-warning"
                                         to={`/edit/${book.id}`}
                                     >
                                         Edit
                                     </Link>
                                     <Button
-                                        style={{marginLeft:'0.6rem'}}
+                                        style={{ marginLeft: "0.6rem" }}
                                         onClick={() => removeBook(book.id)}
                                         className="btn btn-danger"
                                     >
@@ -47,7 +46,9 @@ const BookList = () => {
                         );
                     })
                 ) : (
-                    <h4 style={{textAlign:'center',marginTop:'2rem'}}>No Books In The Store</h4>
+                    <h4 style={{ textAlign: "center", marginTop: "2rem" }}>
+                        No Books In The Store
+                    </h4>
                 )}
             </ListGroup>
         </>

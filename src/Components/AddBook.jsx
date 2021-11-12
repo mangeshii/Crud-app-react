@@ -1,7 +1,7 @@
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
 import { GlobalContext } from "../Context/GlobalState";
-import { useContext, useState } from "react";
+import { useContext, useState} from "react";
 import { v4 as uuid } from "uuid";
 
 const AddBook = () => {
@@ -26,6 +26,7 @@ const AddBook = () => {
         const { name, value } = event.target;
         setNewBook({ ...newBook, [name]: value });
     };
+
     return (
         <>
             <Form onSubmit={handleSubmit}>

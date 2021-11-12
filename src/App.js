@@ -7,21 +7,17 @@ import { GlobalProvider } from "../src/Context/GlobalState"
 
 function App() {
     return (
-
         <div style={{maxWidth:'70rem',margin:'4rem auto'}}>
-        <GlobalProvider>
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/add" component={AddBook} />
-                    <Route exact path="/edit/:id" component={EditBook} />
-                </Switch>
-            </Router>
-        </GlobalProvider>
+            <GlobalProvider>
+                <Router>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/add" component={AddBook} />
+                        <Route exact path="/edit/:id" component={EditBook} />
+                    </Switch>
+                </Router>
+            </GlobalProvider>
         </div>
-
-
-
     );
 }
 
